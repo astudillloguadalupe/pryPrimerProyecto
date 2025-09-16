@@ -32,9 +32,9 @@
             lblFecha = new Label();
             lblNombre = new Label();
             btnRegistrar = new Button();
+            dTPFecha = new DateTimePicker();
+            mtbCantidad = new MaskedTextBox();
             txtNombre = new TextBox();
-            txtCantidad = new TextBox();
-            lstFecha = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -66,43 +66,44 @@
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Location = new Point(329, 279);
+            btnRegistrar.Location = new Point(338, 294);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(87, 34);
             btnRegistrar.TabIndex = 3;
             btnRegistrar.Text = "&Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
             // 
+            // dTPFecha
+            // 
+            dTPFecha.Location = new Point(198, 153);
+            dTPFecha.Name = "dTPFecha";
+            dTPFecha.Size = new Size(200, 23);
+            dTPFecha.TabIndex = 8;
+            // 
+            // mtbCantidad
+            // 
+            mtbCantidad.Location = new Point(198, 235);
+            mtbCantidad.Mask = "99999";
+            mtbCantidad.Name = "mtbCantidad";
+            mtbCantidad.Size = new Size(100, 23);
+            mtbCantidad.TabIndex = 9;
+            mtbCantidad.ValidatingType = typeof(int);
+            // 
             // txtNombre
             // 
             txtNombre.Location = new Point(198, 82);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(100, 23);
-            txtNombre.TabIndex = 4;
-            // 
-            // txtCantidad
-            // 
-            txtCantidad.Location = new Point(198, 238);
-            txtCantidad.Name = "txtCantidad";
-            txtCantidad.Size = new Size(100, 23);
-            txtCantidad.TabIndex = 6;
-            // 
-            // lstFecha
-            // 
-            lstFecha.FormattingEnabled = true;
-            lstFecha.Location = new Point(198, 159);
-            lstFecha.Name = "lstFecha";
-            lstFecha.Size = new Size(121, 23);
-            lstFecha.TabIndex = 7;
+            txtNombre.TabIndex = 10;
             // 
             // frmSorteo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(446, 340);
-            Controls.Add(lstFecha);
-            Controls.Add(txtCantidad);
             Controls.Add(txtNombre);
+            Controls.Add(mtbCantidad);
+            Controls.Add(dTPFecha);
             Controls.Add(btnRegistrar);
             Controls.Add(lblNombre);
             Controls.Add(lblFecha);
@@ -119,8 +120,8 @@
         private Label lblFecha;
         private Label lblNombre;
         private Button btnRegistrar;
+        private DateTimePicker dTPFecha;
+        private MaskedTextBox mtbCantidad;
         private TextBox txtNombre;
-        private TextBox txtCantidad;
-        private ComboBox lstFecha;
     }
 }
