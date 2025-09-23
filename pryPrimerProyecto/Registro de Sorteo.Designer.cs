@@ -91,6 +91,7 @@
             mtbCantidad.Size = new Size(200, 23);
             mtbCantidad.TabIndex = 2;
             mtbCantidad.ValidatingType = typeof(int);
+            mtbCantidad.MaskInputRejected += mtbCantidad_MaskInputRejected;
             // 
             // txtNombre
             // 

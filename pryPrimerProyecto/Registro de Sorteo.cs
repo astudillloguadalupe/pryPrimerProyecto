@@ -23,24 +23,35 @@ namespace pryPrimerProyecto
 
 
         }
-        private void LimpirControles()
+        private void LimpiarControles()
         {
             txtNombre.Clear();
             dTPFecha.Value = DateTime.Now;
             mtbCantidad.Clear();
+            btnRegistrar.Enabled = false;
             txtNombre.Focus();
+
         }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             lstResultado.Items.Add("Nombre del sorteo: " + txtNombre.Text);
             lstResultado.Items.Add("Fecha del sorteo: " + dTPFecha.Text);
             lstResultado.Items.Add("Cantidad de participantes: " + mtbCantidad.Text);
-            LimpirControles();
+            LimpiarControles();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            LimpirControles();
+            if (MessageBox.Show("¿Deseás cancelar el registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                LimpiarControles();
+            }
+
+        }
+
+        private void mtbCantidad_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+          
         }
     }
 }
